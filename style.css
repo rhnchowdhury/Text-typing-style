@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #262d3e;
+    color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+}
+.container{
+    font-size: 35px;
+    font-weight: 700;
+    min-width: 300px;
+}
+.container span{
+    position: relative;
+}
+.container span::before{
+    content: "Software Engineer";
+    color: #45d662;
+    animation: words 20s infinite;
+}
+.container span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #262d3e;
+    border-left: 2px solid #45d662;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(20) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid #262d3e;
+    }
+}
+@keyframes words {
+    0%,20%{
+        content: "Software Engineer";
+    }
+    21%,40%{
+        content: "Software Developer";
+    }
+    41%,60%{
+        content: "Full Stack Dev";
+    }
+    61%,80%{
+        content: "Mern Stack Dev";
+    }
+    81%,100%{
+        content: "Front End Dev";
+    }
+}
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
